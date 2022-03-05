@@ -1,9 +1,11 @@
-const router = require("express").Router();
+import { Router } from "express";
+import api from "./api/index.js";
+const router = Router();
 
-router.use("/api/", require("./api"));
+router.use("/api/", api);
 
 router.use("*", (req, res) => {
   res.send("404");
 });
 
-module.exports = router;
+export default router;

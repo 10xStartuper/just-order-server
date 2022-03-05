@@ -1,6 +1,26 @@
 {
+  "name": "just-order",
+  "version": "1.0.0",
+  "description": "Food ordering application via nodejs/mongodb",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "JavaScript",
+    "NodeJS",
+    "MongoDB"
+  ],
+  "author": "Mukhammadyusuf Abdurakhimov @Yusuf_Dev",
+  "license": "ISC",
   "devDependencies": {
     "dotenv": "^16.0.0",
     "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "express": "^4.17.3"
   }
 }
