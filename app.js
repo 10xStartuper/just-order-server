@@ -9,14 +9,19 @@ const main = async () => {
   app.use(express.static("public"));
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
-  await mongoose.connect(
-    `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.qlg2b.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
-    {
-      useNewUrlParser: true,
-      // useFindAndModify: false,
-      useUnifiedTopology: true,
-    }
-  );
+  await mongoose
+    .connect(
+      `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.qlg2b.mongodb.net/justorder?retryWrites=true&w=majority`,
+      {
+        useNewUrlParser: true,
+        // useFindAndModify: false,
+        useUnifiedTopology: true,
+      }
+    )
+    .then((result) => {
+      console.log("Connected to db");
+    });
+
   app.use("/", routes);
 
   app.listen(3000, () => {
