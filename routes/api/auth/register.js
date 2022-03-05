@@ -5,15 +5,12 @@ import User from "../../../models/user.js";
 const router = Router();
 
 router.post("/", async (req, res) => {
-  let hashedPass = "";
-  await bcrypt.hash(req.body.password, 10).then(function (hash) {
-    hashedPass = hash;
-  });
+  const hashedPassword = await bcrypt.hash(req.body.password, 10);
   const user = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     email: req.body.email,
-    password: hashedPass,
+    password: hashedPassword,
     phoneNumber: req.body.phoneNumber,
     dateOfBirth: req.body.dateOfBirth,
   };
