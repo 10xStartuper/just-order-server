@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 const { Schema, model } = mongoose;
 import uniqueValidator from "mongoose-unique-validator";
+import dotenv from "dotenv";
+dotenv.config();
 
 const userSchema = new Schema(
   {
@@ -9,6 +11,7 @@ const userSchema = new Schema(
     email: {
       type: String,
       required: true,
+      lowercase: true,
       unique: true,
       uniqueCaseInsensitive: true,
     },
@@ -20,6 +23,11 @@ const userSchema = new Schema(
       uniqueCaseInsensitive: true,
     },
     dateOfBirth: { type: Date, required: false },
+    image: {
+      type: String,
+      default: `${process.env.DOMAIN}/images/default/default-avatar.png`,
+      required: false,
+    },
   },
   { timestamps: true }
 );

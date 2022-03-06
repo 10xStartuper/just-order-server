@@ -5,7 +5,6 @@ import routes from "./routes/index.js";
 import mongoose from "mongoose";
 const main = async () => {
   const app = express();
-
   app.use(express.static("public"));
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
