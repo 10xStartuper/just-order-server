@@ -8,6 +8,7 @@ const main = async () => {
   app.use(express.static("public"));
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
+  app.set("view engine", "ejs");
   await mongoose
     .connect(
       `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.qlg2b.mongodb.net/justorder?retryWrites=true&w=majority`,
