@@ -12,7 +12,10 @@ router.get("/", (req, res) => {
 router.use("/api/", api);
 
 router.use("*", (req, res) => {
-  res.send("404");
+  res.render("page", {
+    title: "404 | NOT FOUND",
+    content: "Seems like you have made wrong request",
+  });
 });
 
 export default router;
