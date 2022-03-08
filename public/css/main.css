@@ -1,0 +1,36 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #222;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  transition: all 0.5s ease-in-out;
+  padding: 20px;
+  background-color: #000;
+  border: 1px dashed #000;
+  width: 620px;
+}
+
+.container:hover {
+  transition: all 0.5s ease-in-out;
+  border: 1px dashed #cc0000;
+  box-shadow: 0 0 24px rgba(204, 0, 0, 0.07);
+  cursor: default;
+}
+
+.container h2 {
+  padding: 12px 0px;
+}
+.container div {
+  padding-bottom: 12px;
+}
